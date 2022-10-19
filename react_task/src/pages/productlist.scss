@@ -1,0 +1,239 @@
+.productlist {
+  margin-top: 125px;
+  &__container {
+    &__row {
+      &__left {
+        position: fixed;
+        display: flex;
+
+        &__favorites {
+          border: 2px dashed #414141;
+          border-radius: 30px;
+          width: 307px;
+          height: 600px;
+          padding: 45px 30px;
+          overflow: auto;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          span {
+            font-family: "Anek Telugu";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: #414141;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+          &__row {
+            background: #fbfbfb;
+            border-radius: 30px;
+            overflow: hidden;
+            padding: 11px;
+            height: 100px;
+            align-items: center;
+            margin-bottom: 7px;
+            &__image {
+              height: 80px;
+              padding: 0;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            &__title {
+              p {
+                margin: 0;
+              }
+              display: flex;
+              flex-direction: column;
+              .price__div {
+                display: flex;
+                justify-content: space-between;
+                .span__price {
+                  margin: 0;
+                  font-family: "Poppins";
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 24px;
+                  line-height: 36px;
+                }
+                .span__icon {
+                  margin: 0;
+
+                  background: #ffcc26;
+                  border-radius: 5px;
+                  width: 31px;
+                  height: 31px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 24px;
+                  color: white;
+                  .add__to__favorites__disactive {
+                    cursor: pointer;
+                    color: white !important;
+                  }
+                  .add__to__favorites__active {
+                    cursor: pointer;
+                    color: black !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &__right {
+        padding-right: 90px;
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__product {
+          height: 302px;
+          width: 202px;
+          background: #ffffff;
+          border: 1px dashed #414141;
+          border-radius: 30px;
+          margin-bottom: 30px;
+          overflow: hidden;
+          padding: 13px 25px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          &__image {
+            height: 152px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-position: center;
+              object-fit: contain;
+              transition: 0.3s ease;
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
+          }
+          &__name {
+            p {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 30px;
+              margin: 0;
+              text-transform: capitalize;
+            }
+          }
+          &__price {
+            display: flex;
+            justify-content: space-between;
+            .span__price {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 24px;
+              line-height: 36px;
+            }
+            .span__icon {
+              background: #ffcc26;
+              border-radius: 5px;
+              width: 31px;
+              height: 31px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 24px;
+              color: white;
+              .add__to__favorites__disactive {
+                cursor: pointer;
+                color: white !important;
+              }
+              .add__to__favorites__active {
+                cursor: pointer;
+                color: black !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.details {
+  margin-top: 120px;
+  &__container {
+    &__row {
+      &__right {
+        padding: 0 90px 0 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        display: flex;
+        align-items: center;
+        &__image {
+          height: 400px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &__title {
+          padding-left: 100px;
+          .price__div {
+            display: flex;
+            justify-content: space-between;
+            .span__price {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 64px;
+              line-height: 96px;
+              /* identical to box height */
+
+              color: #414141;
+            }
+            .span__icon {
+              margin: 0;
+              background: #ffcc26;
+              border-radius: 5px;
+              width: 90px;
+              height: 96px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 54px;
+              color: white;
+            }
+          }
+          p {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 96px;
+
+            color: #414141;
+          }
+        }
+      }
+    }
+  }
+}
