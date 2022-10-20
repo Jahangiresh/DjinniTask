@@ -5,6 +5,7 @@ import axios from "axios";
 import "./productlist.scss";
 import { AiFillHeart } from "react-icons/ai";
 import Favorites from "../componenets/Favorites";
+import { toast, Toaster } from "react-hot-toast";
 import Loader from "../componenets/Loader";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -53,6 +54,7 @@ const ProductList = ({ istrue, setistrue }) => {
     };
     getProduct();
   }, [loading, products]);
+
   const addToFavorites = (prod) => {
     let favorite = JSON.parse(localStorage.getItem("favorites"));
     let _id = prod.id;
@@ -60,13 +62,17 @@ const ProductList = ({ istrue, setistrue }) => {
     let existedProd = favorite.find((x) => x.id === _id);
 
     if (!existedProd) {
+      toast.success("Product added to basket !");
       favorite.push(prod);
     } else {
       favorite.splice(favorite.indexOf(existedProd), 1);
+      toast.error("product removed from basket !");
     }
     localStorage.setItem("favorites", JSON.stringify(favorite));
+
     setistrue((current) => !current);
   };
+
   return loading ? (
     <Loader></Loader>
   ) : (
@@ -98,7 +104,15 @@ const ProductList = ({ istrue, setistrue }) => {
                   <div className="productlist__container__row__right__product__price ">
                     <span className="span__price">${product.price}</span>
                     <span className="span__icon">
-                      <AiFillHeart onClick={() => addToFavorites(product)} />
+                      <AiFillHeart
+                        key={product.id}
+                        onClick={() => addToFavorites(product)}
+                        // className={
+                        //   favs.some((e) => e.id === product.id)
+                        //     ? "add__to__favorites__active"
+                        //     : "add__to__favorites__disactive"
+                        // }
+                      />
                     </span>
                   </div>
                 </div>
@@ -106,6 +120,7 @@ const ProductList = ({ istrue, setistrue }) => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

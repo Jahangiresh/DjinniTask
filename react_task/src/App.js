@@ -1,6 +1,7 @@
 import Header from "./componenets/Header.jsx";
 import "./app.scss";
 import ProductList from "./pages/ProductList.jsx";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Details from "./pages/Details.jsx";
 import { useState } from "react";

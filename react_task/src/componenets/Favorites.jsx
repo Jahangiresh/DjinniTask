@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { AiFillHeart } from "react-icons/ai";
-
+import { toast, Toaster } from "react-hot-toast";
 const Favorites = ({ istrue, setistrue }) => {
   let products = JSON.parse(localStorage.getItem("favorites"));
 
@@ -16,6 +16,7 @@ const Favorites = ({ istrue, setistrue }) => {
     let _id = prod.id;
 
     let existedProd = favorite.find((x) => x.id === _id);
+    toast.error("product removed from basket !");
 
     favorite.splice(favorite.indexOf(existedProd), 1);
     localStorage.setItem("favorites", JSON.stringify(favorite));
@@ -49,6 +50,7 @@ const Favorites = ({ istrue, setistrue }) => {
             </div>
           ))}
       </div>
+      <Toaster />
     </div>
   );
 };
